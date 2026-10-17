@@ -1,0 +1,13 @@
+- [x] Restrict catalogue to nine packages and add labelled suggested itineraries.
+- [x] Separate trip detail steps with continue buttons and smooth exit animations.
+- [x] Repair destination motion, automate reviews and refine scroll/hover/menu motion.
+- [x] Replace WhatsApp artwork and verify trip flows across screen sizes.
+- [x] Replace AI with catalogue-based trip matching and verify recommendations.
+- [x] Update owner, Google review link, curved golden reviews, social timing and corner WhatsApp.
+- [x] Refine smooth hero/touch motion and verify desktop/mobile flows.
+- [x] Fix cover/header overlap and refine logo-aligned theme and smooth touch interactions.
+- [x] Replace all company contact details with the single official email and phone.
+- [x] Verify layout, touch interactions, navigation and trek booking opening.
+- [x] Add supplied desktop/mobile backgrounds and official tourism certification.
+- [x] Feature the head guide photographs in About us with additional touch-responsive motion.
+- [x] Verify photos, animations and booking access on desktop and mobile.
