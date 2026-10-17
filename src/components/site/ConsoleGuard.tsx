@@ -19,7 +19,11 @@ export function ConsoleGuard() {
     let spam: ReturnType<typeof setInterval> | undefined;
     const onKey = (e: KeyboardEvent) => {
       const k = e.key.toUpperCase();
-      if (k === "F12" || ((e.ctrlKey || e.metaKey) && e.shiftKey && ["I", "J", "C"].includes(k)) || ((e.ctrlKey || e.metaKey) && k === "U")) {
+      if (
+        k === "F12" ||
+        ((e.ctrlKey || e.metaKey) && e.shiftKey && ["I", "J", "C"].includes(k)) ||
+        ((e.ctrlKey || e.metaKey) && k === "U")
+      ) {
         e.preventDefault();
         if (!spam) spam = setInterval(warn, 1500);
       }

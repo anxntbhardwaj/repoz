@@ -2,7 +2,13 @@ import { createFileRoute } from "@tanstack/react-router";
 import { getRouterInstance } from "@tanstack/react-start";
 import { SITE_URL } from "@/lib/seo";
 import { TOURS } from "@/lib/tours";
-import { isSitemapRouteIncluded, sitemapPathForLocation, sitemapStaticPaths, sitemapXML, type SitemapEntry } from "@/lib/sitemap";
+import {
+  isSitemapRouteIncluded,
+  sitemapPathForLocation,
+  sitemapStaticPaths,
+  sitemapXML,
+  type SitemapEntry,
+} from "@/lib/sitemap";
 
 const BASE_URL = `${SITE_URL}/`;
 
@@ -22,7 +28,12 @@ export const Route = createFileRoute("/sitemap.xml")({
         const routeId = "/tours/$id";
         if (isSitemapRouteIncluded(router.routesById[routeId])) {
           for (const tour of TOURS) {
-            const location = router.buildLocation({ to: "/tours/$id", params: { id: tour.id }, search: () => ({}), hash: "" });
+            const location = router.buildLocation({
+              to: "/tours/$id",
+              params: { id: tour.id },
+              search: () => ({}),
+              hash: "",
+            });
             const path = sitemapPathForLocation(router, location, routeId);
             if (path) entries.push({ path });
           }

@@ -30,7 +30,11 @@ export function ThemeToggle() {
       aria-label={dark ? "Switch to day theme" : "Switch to night theme"}
       className="grid h-9 w-9 place-items-center rounded-md border border-current/25 transition-[transform,background-color] duration-500 hover:rotate-12 hover:bg-current/10 active:scale-90"
     >
-      {dark ? <Sun className="h-4 w-4" strokeWidth={1.5} /> : <Moon className="h-4 w-4" strokeWidth={1.5} />}
+      {dark ? (
+        <Sun className="h-4 w-4" strokeWidth={1.5} />
+      ) : (
+        <Moon className="h-4 w-4" strokeWidth={1.5} />
+      )}
     </button>
   );
 }

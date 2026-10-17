@@ -25,7 +25,9 @@ export function DestinationStrip({ places, speed = 48 }: { places: string[]; spe
       frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);
-    const nudge = () => { boost = 4; };
+    const nudge = () => {
+      boost = 4;
+    };
     const parent = el.parentElement;
     parent?.addEventListener("pointerdown", nudge);
     parent?.addEventListener("pointerenter", nudge);
@@ -42,8 +44,12 @@ export function DestinationStrip({ places, speed = 48 }: { places: string[]; spe
         {[0, 1].map((k) => (
           <div key={k} className="flex shrink-0 items-center" aria-hidden={k === 1}>
             {places.map((p) => (
-              <span key={p} className="destination-word flex items-center gap-10 pr-10 font-display text-xl italic text-muted-foreground md:text-3xl">
-                {p}<span className="h-1.5 w-1.5 rotate-45 bg-primary" />
+              <span
+                key={p}
+                className="destination-word flex items-center gap-10 pr-10 font-display text-xl italic text-muted-foreground md:text-3xl"
+              >
+                {p}
+                <span className="h-1.5 w-1.5 rotate-45 bg-primary" />
               </span>
             ))}
           </div>

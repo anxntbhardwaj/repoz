@@ -1,0 +1,8 @@
+{
+  "name": "Altitude Climber",
+  "description": "Treks and tours across Himachal Pradesh, Shrikhand Mahadev, Kinnar Kailash, and Kullu Valley.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

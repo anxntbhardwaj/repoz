@@ -21,7 +21,10 @@ export function Header() {
   const home = useLocation({ select: (l) => l.pathname }) === "/";
   const [menuMounted, setMenuMounted] = useState(false);
   useEffect(() => {
-    if (open) { setMenuMounted(true); return; }
+    if (open) {
+      setMenuMounted(true);
+      return;
+    }
     const timer = setTimeout(() => setMenuMounted(false), 400);
     return () => clearTimeout(timer);
   }, [open]);
@@ -37,7 +40,9 @@ export function Header() {
     <header
       data-over={over || undefined}
       className={`group/h sticky top-0 z-40 h-24 border-b transition-[background-color,border-color,color,backdrop-filter] duration-700 ${
-        over ? "border-transparent bg-transparent text-on-image" : "hairline bg-background/80 text-foreground backdrop-blur-xl"
+        over
+          ? "border-transparent bg-transparent text-on-image"
+          : "hairline bg-background/80 text-foreground backdrop-blur-xl"
       }`}
     >
       <div className="mx-auto grid h-full max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 lg:grid-cols-[auto_1fr_auto] lg:gap-5 px-5 md:px-8">
@@ -46,7 +51,11 @@ export function Header() {
         </Link>
         <nav className="hidden justify-center gap-5 lg:flex">
           {NAV.map((n) => (
-            <a key={n.href} href={n.href} className="relative text-sm opacity-75 transition-opacity hover:opacity-100 after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100">
+            <a
+              key={n.href}
+              href={n.href}
+              className="relative text-sm opacity-75 transition-opacity hover:opacity-100 after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100"
+            >
               {n.label}
             </a>
           ))}
@@ -60,7 +69,9 @@ export function Header() {
             {BRAND.phonePrimary}
           </a>
           <ThemeToggle />
-          <Button variant="ghost" size="icon"
+          <Button
+            variant="ghost"
+            size="icon"
             className="grid h-9 w-9 place-items-center rounded-md border border-current/25 lg:hidden"
             onClick={() => setOpen((o) => !o)}
             aria-label={open ? "Close menu" : "Open menu"}
@@ -71,9 +82,17 @@ export function Header() {
         </div>
       </div>
       {menuMounted && (
-        <nav data-state={open ? "open" : "closed"} className="border-b hairline bg-background mobile-navigation px-5 py-5 lg:hidden">
+        <nav
+          data-state={open ? "open" : "closed"}
+          className="border-b hairline bg-background mobile-navigation px-5 py-5 lg:hidden"
+        >
           {NAV.map((n) => (
-            <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="mobile-nav-link block border-b border-border py-3 font-display text-3xl">
+            <a
+              key={n.href}
+              href={n.href}
+              onClick={() => setOpen(false)}
+              className="mobile-nav-link block border-b border-border py-3 font-display text-3xl"
+            >
               {n.label}
             </a>
           ))}

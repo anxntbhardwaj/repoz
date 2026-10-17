@@ -35,20 +35,45 @@ export function ContactForm() {
     }
   }
 
-  const err = (k: string) => errors[k] && <span className="mt-1 block text-xs text-destructive">{errors[k]}</span>;
+  const err = (k: string) =>
+    errors[k] && <span className="mt-1 block text-xs text-destructive">{errors[k]}</span>;
 
   return (
     <form onSubmit={submit} noValidate className="grid gap-4 sm:grid-cols-2">
-      <label><span className={labelCls}>Name *</span><input name="name" className={fieldCls} />{err("name")}</label>
-      <label><span className={labelCls}>Email *</span><input name="email" type="email" className={fieldCls} />{err("email")}</label>
-      <label className="sm:col-span-2"><span className={labelCls}>Phone</span><input name="phone" type="tel" className={fieldCls} /></label>
-      <label className="sm:col-span-2"><span className={labelCls}>Message *</span><textarea name="message" rows={5} className={fieldCls} />{err("message")}</label>
+      <label>
+        <span className={labelCls}>Name *</span>
+        <input name="name" className={fieldCls} />
+        {err("name")}
+      </label>
+      <label>
+        <span className={labelCls}>Email *</span>
+        <input name="email" type="email" className={fieldCls} />
+        {err("email")}
+      </label>
+      <label className="sm:col-span-2">
+        <span className={labelCls}>Phone</span>
+        <input name="phone" type="tel" className={fieldCls} />
+      </label>
+      <label className="sm:col-span-2">
+        <span className={labelCls}>Message *</span>
+        <textarea name="message" rows={5} className={fieldCls} />
+        {err("message")}
+      </label>
       <div className="flex flex-wrap items-center gap-4 sm:col-span-2">
-        <Button disabled={state === "sending"} className="h-12 gap-2 rounded-sm px-6 text-sm font-semibold">
+        <Button
+          disabled={state === "sending"}
+          className="h-12 gap-2 rounded-sm px-6 text-sm font-semibold"
+        >
           {state === "sending" && <Loader2 className="h-4 w-4 animate-spin" />} Send message
         </Button>
-        {state === "done" && <p className="text-sm text-primary">Thank you — your message has reached our team.</p>}
-        {state === "error" && <p className="text-sm text-destructive">Couldn't send right now. Please call or WhatsApp us.</p>}
+        {state === "done" && (
+          <p className="text-sm text-primary">Thank you — your message has reached our team.</p>
+        )}
+        {state === "error" && (
+          <p className="text-sm text-destructive">
+            Couldn't send right now. Please call or WhatsApp us.
+          </p>
+        )}
       </div>
     </form>
   );

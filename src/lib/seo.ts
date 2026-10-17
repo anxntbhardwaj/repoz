@@ -6,17 +6,19 @@ export const SITE_URL = "https://altitudeclimber.in";
 export function pageHead(path: string, title: string, description: string, crumb?: string) {
   const url = `${SITE_URL}${path}`;
   const scripts = crumb
-    ? [{
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-            { "@type": "ListItem", position: 2, name: crumb, item: url },
-          ],
-        }),
-      }]
+    ? [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+              { "@type": "ListItem", position: 2, name: crumb, item: url },
+            ],
+          }),
+        },
+      ]
     : [];
   return {
     meta: [

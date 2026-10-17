@@ -22,7 +22,9 @@ describe("quote message", () => {
 
   it("multiplies a per-person budget across the group", () => {
     const q = quoteSchema.parse(base);
-    expect(buildQuoteMessage("X", q)).toContain("₹20,000 per person (approx. ₹80,000 for the group)");
+    expect(buildQuoteMessage("X", q)).toContain(
+      "₹20,000 per person (approx. ₹80,000 for the group)",
+    );
   });
 
   it("formats the date as dd-mm-yyyy", () => {
@@ -38,6 +40,10 @@ describe("quote message", () => {
 import { isBeforeToday } from "./quote";
 describe("preferred date", () => {
   const today = new Date(2026, 9, 17);
-  it("rejects dates before today", () => { expect(isBeforeToday("2026-10-16", today)).toBe(true); });
-  it("allows today", () => { expect(isBeforeToday("2026-10-17", today)).toBe(false); });
+  it("rejects dates before today", () => {
+    expect(isBeforeToday("2026-10-16", today)).toBe(true);
+  });
+  it("allows today", () => {
+    expect(isBeforeToday("2026-10-17", today)).toBe(false);
+  });
 });

@@ -1,7 +1,14 @@
 type P = { className?: string };
 
 export const InstagramIcon = ({ className }: P) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={className} aria-hidden>
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    className={className}
+    aria-hidden
+  >
     <rect x="3" y="3" width="18" height="18" rx="5" />
     <circle cx="12" cy="12" r="4" />
     <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" />
@@ -22,7 +29,15 @@ export const WhatsAppIcon = ({ className }: P) => (
 
 /** Minimal side-profile 4x4 for the itinerary trail. */
 export const JeepIcon = ({ className }: P) => (
-  <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" className={className} aria-hidden>
+  <svg
+    viewBox="0 0 48 32"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinejoin="round"
+    className={className}
+    aria-hidden
+  >
     <path d="M4 22V14l5-7h17l4 7h10a4 4 0 0 1 4 4v4" fill="var(--color-background)" />
     <path d="M12 7v7M24 7v7M4 14h36" />
     <circle cx="13" cy="24" r="4" fill="var(--color-background)" />

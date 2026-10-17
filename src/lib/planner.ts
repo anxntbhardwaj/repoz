@@ -1,6 +1,15 @@
 import { z } from "zod";
 
-export const INTERESTS = ["Pilgrimage", "High summits", "Camping", "Culture & villages", "Photography", "Road trips", "Lakes & deserts", "Paragliding"] as const;
+export const INTERESTS = [
+  "Pilgrimage",
+  "High summits",
+  "Camping",
+  "Culture & villages",
+  "Photography",
+  "Road trips",
+  "Lakes & deserts",
+  "Paragliding",
+] as const;
 export const FITNESS = ["Beginner", "Moderate", "Fit", "Experienced trekker"] as const;
 
 export const planSchema = z.object({
